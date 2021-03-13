@@ -35,6 +35,10 @@ public class PlayerLinkedList {
 
     // Insert
     public void add(PlayerListNode node, int index) {
-        
+
+    }
+
+    public PlayerListNode get(int index) {
+
     }
 }
