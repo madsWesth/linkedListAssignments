@@ -20,7 +20,21 @@ public class PlayerLinkedList {
         }
     }
 
-    public void add(PlayerListNode node) {
+    // Append
+    public void add(Player nodeValue) {
+        if(front == null) {
+            front = new PlayerListNode(nodeValue);
+        } else {
+            PlayerListNode current = front;
+            while(current.next != null) {
+                current = current.next;
+            }
+            current.next = new PlayerListNode(nodeValue);
+        }
+    }
+
+    // Insert
+    public void add(PlayerListNode node, int index) {
         
     }
 }

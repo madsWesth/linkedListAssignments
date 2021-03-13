@@ -1,7 +1,10 @@
 package com.kea;
 
 public class PlayerListNode {
-    public int data;
+    public Player data;
     public PlayerListNode next;
 
+    public PlayerListNode(Player data) {
+        this.data = data;
+    }
 }
