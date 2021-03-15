@@ -3,7 +3,15 @@ package com.kea;
 import javax.swing.plaf.InsetsUIResource;
 
 public class PlayerLinkedList {
-    public PlayerListNode front; //TODO: need to make a dummy node
+    public PlayerListNode front;
+    public PlayerListNode back;
+
+    public PlayerLinkedList() {
+        front.next = new PlayerListNode(); // initializes the dummy nodes.
+        back.next = new PlayerListNode();
+        clear(); // sets their pointers correctly.
+    }
+
 
     public String toString() {
         if(front == null) {
@@ -74,5 +82,10 @@ return null;
                     break;
             }
         }
+    }
+
+    public void clear() {
+        front.next = back;
+        back.prev = front;
     }
 }
