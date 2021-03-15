@@ -8,8 +8,9 @@ public class PlayerListNode {
     public PlayerListNode(Player data) {
         this(data, null, null);
     }
-    public PlayerListNode(PlayerListNode next) {
-        this(null, next ,null);
+
+    public PlayerListNode(PlayerListNode next, PlayerListNode prev) {
+        this(null, next ,prev);
     }
 
     public PlayerListNode(Player data, PlayerListNode next, PlayerListNode prev) {
@@ -19,7 +20,7 @@ public class PlayerListNode {
     }
 
     public PlayerListNode() {
-        
+
     }
 
 }
