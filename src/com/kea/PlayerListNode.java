@@ -19,7 +19,7 @@ public class PlayerListNode {
     }
 
     public PlayerListNode() {
-        
+
     }
 
 }

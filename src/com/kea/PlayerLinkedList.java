@@ -30,18 +30,30 @@ public class PlayerLinkedList {
 
     // Append
     public void add(Player nodeValue) {
-        if(front == null) {
-            front = new PlayerListNode(nodeValue);
+        if(front.next == back) {
+            PlayerListNode newNode = new PlayerListNode(nodeValue);
+            //next
+            newNode.next = back;
+            front.next = newNode;
+            //prev
+            newNode.prev = front;
+            back.prev = newNode;
         } else {
             PlayerListNode current = front;
-            while(current.next != null) {
+            while(current.next != back) {
                 current = current.next;
             }
-            current.next = new PlayerListNode(nodeValue);
+            PlayerListNode newNode = new PlayerListNode(nodeValue);
+            //next
+            current.next = newNode;
+            newNode.next = back;
+            //prev
+            newNode.prev = current;
+            back.prev = newNode;
         }
     }
 
-    // Insert
+    // Insert TODO: Unnecessary?
     public void add(PlayerListNode node, int index) {
 
     }
