@@ -19,8 +19,4 @@ public class PlayerListNode {
         this.prev = prev;
     }
 
-    public PlayerListNode() {
-
-    }
-
 }
