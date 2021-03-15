@@ -37,6 +37,7 @@ public class JDBCReader {
         } catch (Exception e) {
             System.out.println(e);
         }
+        //toString that prints out the tables in a formatted fasion
         System.out.println(list.toString());
     }
 }
