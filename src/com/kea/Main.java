@@ -1,9 +1,19 @@
 package com.kea;
 
+import java.util.Collections;
+
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
+        //initialize at start
+        PlayerLinkedList teamList1 = new PlayerLinkedList();
+        PlayerLinkedList teamList2 = new PlayerLinkedList();
+
+        Team team1 = new Team("Team1", teamList1);
+        Team team2 = new Team("Team2", teamList2);
+
+
         //mainMenu();
 
         //JDBCWriter.connectDB();
