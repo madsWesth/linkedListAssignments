@@ -9,9 +9,9 @@ public class JDBCWriter {
     private static Connection cn = null;
 
     public static void connectDB(){
-        final String url = "jdbc:mysql://127.0.0.1:3306/football_club?user=SERVER?serverTimezone=UTC";
+        final String url = "jdbc:mysql://127.0.0.1:3306/football_club?lingding=SERVER?serverTimezone=UTC";
         try {
-            cn = DriverManager.getConnection(url,"?", "?");
+            cn = DriverManager.getConnection(url,"lingding", "lol");
             System.out.println("Data base connection established");
         } catch (SQLException e) {
             e.printStackTrace();
