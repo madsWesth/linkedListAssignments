@@ -5,7 +5,8 @@ import java.util.HashMap;
 
 public class JDBCReader {
 
-    public static void printTableFromDB(String table) {
+
+    public void printTableFromDB(String table) {
 
         try {
             Connection cn = DriverManager.getConnection
