@@ -5,22 +5,25 @@ import java.sql.SQLException;
 
 public class JDBCReader {
 
+    // cn skal ind her?? som en referrence
+
     public String readFromDB(String sql) {
         JDBCWriter.connectDB();
 
         return sql;
     }
 
-    public String printTableFromDB(String table){
+   /* public String printTableFromDB(String table){
         JDBCWriter.connectDB();
 
         String printTable = "SELECT * FROM football_club.?;";
-        PreparedStatement statement = prepareStatement(printTable);
+        PreparedStatement preparedStatement;
         try {
-            statement.setString(1, table);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            preparedStatement = cn.prepareStatement(printTable);
+            preparedStatement.executeUpdate();
+        } catch (SQLException err) {
+            System.out.println("Update Error: " + err.getMessage());
         }
         return printTable;
-    }
+    }*/
 }

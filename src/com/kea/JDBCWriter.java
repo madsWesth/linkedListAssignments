@@ -19,8 +19,8 @@ public class JDBCWriter {
     }
 
     //Har jeg fat i det rigtige?
-    public static void update(String firstname, String lastname, int Age, int Team){
-        String updateStr = String.format(firstname, lastname, Age, Team);
+    public static void updatePlayer(int id, String firstname, String lastname, int age, int team){
+        String updateStr = String.format("UPDATE WHERE %s values (DEFAULT, %d, '%s', '%s', %d, %s)", id, firstname, lastname, age, team);
         PreparedStatement preparedStatement;
 
         try {
