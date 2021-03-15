@@ -105,7 +105,6 @@ public class PlayerLinkedList {
         while(current.next != end) { // checks if there is anything to swap with
             int compare = comparator.compareAge(current.next, current.next.next);
 
-
             switch (compare) {
                 case 1: // swap
                     PlayerListNode cont = current;
