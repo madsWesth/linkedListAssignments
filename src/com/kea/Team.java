@@ -1,5 +1,5 @@
 package com.kea;
 
 public class Team {
-    private PlayerLinkedList<PlayerListNode> playerList;
+    //private PlayerLinkedList<PlayerListNode> playerList;
 }
