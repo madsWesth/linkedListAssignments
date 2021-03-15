@@ -6,8 +6,9 @@ public class Club {
 
     public Club(String clubName) {
         this.clubName = clubName;
-        this.teamList[0] = new Team("team1");
-        this.teamList[1] = new Team("team2");
+    //    this.teamList[0] = new Team("team1");
+    //    this.teamList[1] = new Team("team2");
     }
+
 
 }

@@ -10,7 +10,7 @@ public class Main {
         //initialize at start
         Club club = new Club("Boldklubben");
 
-        //Menu.mainMenu();
+        Menu.mainMenu();
 
         /*
         JDBCWriter.connectDB();
