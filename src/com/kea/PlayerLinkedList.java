@@ -10,8 +10,7 @@ public class PlayerLinkedList {
         end = front.next;
         //clear();
     }
-
-
+    
     public String toString() {
         if(front.next == end) {
             return "[]";
@@ -65,7 +64,6 @@ public class PlayerLinkedList {
             current = current.next;
         }
         return current;
-
     }
 
     public int indexOf(Player data) {
