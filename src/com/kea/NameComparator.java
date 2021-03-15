@@ -1,6 +1,8 @@
 package com.kea;
 
-public class Comparator {
+import java.util.Comparator;
+
+public class NameComparator implements Comparator<Player> {
 
     public int compareAge(PlayerListNode node1, PlayerListNode node2) {
         int compare = 0;
@@ -14,7 +16,8 @@ public class Comparator {
         return compare;
     }
 
-    public int compareName(PlayerListNode node1, PlayerListNode node2) {
-        return node1.data.firstName.compareToIgnoreCase(node2.data.firstName);
+    public int compare(Player player1, Player player2) {
+        return player1.firstName.compareToIgnoreCase(player2.firstName);
     }
+
 }
