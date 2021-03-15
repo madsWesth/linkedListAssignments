@@ -8,4 +8,7 @@ public class PlayerListNode {
     public PlayerListNode(Player data) {
         this.data = data;
     }
+    public PlayerListNode(PlayerListNode next) {
+
+    }
 }

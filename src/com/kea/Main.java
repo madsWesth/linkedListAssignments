@@ -6,7 +6,10 @@ public class Main {
 	// write your code here
         //mainMenu();
 
+
         PlayerLinkedList list = new PlayerLinkedList();
+
+        /*
         list.front = new PlayerListNode(new Player());
         list.front.data.age = 20;
         list.front.next = new PlayerListNode(new Player());
@@ -16,6 +19,7 @@ public class Main {
         Comparator comp = new Comparator();
         list.sortByAge(comp);
         System.out.println(list.toString());
+        */
         /*
         String name = "abe";
         String name2 = "bente";

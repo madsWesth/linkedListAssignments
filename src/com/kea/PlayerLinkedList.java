@@ -12,7 +12,7 @@ public class PlayerLinkedList {
             String result = "[" + front.data.age; // fence TODO: Make a general toString? this one only displays age.
             PlayerListNode current = front;
             while(current.next != null) {
-                result += ", " + current.next.data.age;
+                result += ", " + current.data.age;
                 current = current.next;
             }
             result += "]";
