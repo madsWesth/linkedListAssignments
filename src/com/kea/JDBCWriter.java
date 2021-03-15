@@ -43,5 +43,15 @@ public class JDBCWriter {
         }
     }
 
-
+    // Insert insert
+    public static void insert(int id, String firstname, String lastname, int age, int team){
+        String insstr = String.format("insert into %s member(%d, '%s', '%s', %d, %d)", id, firstname, lastname, age, team);
+        PreparedStatement preparedStatement;
+        try {
+            preparedStatement = cn.prepareStatement(insstr);
+            preparedStatement.executeUpdate();
+        } catch (SQLException err) {
+            System.out.println("Insert Error: " + err.getMessage());
+        }
+    }
 }

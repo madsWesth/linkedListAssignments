@@ -37,5 +37,4 @@ public class Club {
         Collections.sort(list, nameComparator);
         System.out.println(list.toString());
     }
-
 }
