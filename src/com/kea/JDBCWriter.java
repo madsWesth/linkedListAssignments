@@ -20,7 +20,7 @@ public class JDBCWriter {
 
     //Har jeg fat i det rigtige?
     public static void updatePlayer(int id, String firstname, String lastname, int age, int team){
-        String updateStr = String.format("UPDATE member (%d, '%s', '%s', %d, %d)", id, firstname, lastname, age, team);
+        String updateStr = String.format("UPDATE member %d, '%s', '%s', %d, %d", id, firstname, lastname, age, team);
         PreparedStatement preparedStatement;
 
         try {
@@ -28,6 +28,18 @@ public class JDBCWriter {
             preparedStatement.executeUpdate();
         } catch (SQLException err) {
             System.out.println("Update Error: " + err.getMessage());
+        }
+    }
+
+    // Remove Player
+    public static void removePlayer(String firstname, String lastname) {
+        String revstr = String.format("remove from member where %s = %s, %s", firstname, lastname);
+        PreparedStatement preparedStatement;
+        try {
+            preparedStatement = cn.prepareStatement(revstr);
+            preparedStatement.executeUpdate();
+        } catch (SQLException err) {
+            System.out.println("Delete Error: " + err.getMessage());
         }
     }
 
