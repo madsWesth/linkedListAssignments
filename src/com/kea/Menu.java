@@ -75,7 +75,13 @@ public class Menu {
             startMenu.printMenu();
             switch (startMenu.readChoice()) {
                 case 1:
-                    System.out.println("Search for a Member");
+                    System.out.print("Write the name of the member you want to search for: ");
+                    Scanner sc = new Scanner(System.in);
+                    String name = sc.nextLine();
+                    System.out.println("\nHere are all the members containing your search " + '"' + name + '"' + ":");
+                    Club club = new Club("Boldklubben");
+                    club.reader.printTableFromDB("members");
+                    club.printAllByName(name);
                     break;
                 case 2:
                     System.out.println("Delete a Member from team nr. ");

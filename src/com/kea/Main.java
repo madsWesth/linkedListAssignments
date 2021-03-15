@@ -8,9 +8,6 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
         //initialize at start
-        Club club = new Club("Boldklubben");
-        club.reader.printTableFromDB("members");
-        club.printAllByName("Lars");
         Menu.mainMenu();
 
         /*

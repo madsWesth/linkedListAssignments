@@ -29,9 +29,8 @@ public class Player {
     }
 
     public String toString() {
-        return firstName + " " + lastName  + "\n" +
-                "age: " + age + "\n" +
-                team.getTeamName();
+        return firstName + " " + lastName  + " | " +
+                "age: " + age + " | " + team.getTeamName() + "\n";
     }
 
 }
