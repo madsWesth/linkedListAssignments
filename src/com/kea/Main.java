@@ -10,9 +10,10 @@ public class Main {
         //initialize at start
         Club club = new Club("Boldklubben");
 
-        //mainMenu();
+        //Menu.mainMenu();
 
-        //JDBCWriter.connectDB();
+        /*
+        JDBCWriter.connectDB();
         PlayerLinkedList list = new PlayerLinkedList();
         Player mads = new Player();
         mads.firstName = "mads";
