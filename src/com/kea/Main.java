@@ -8,7 +8,7 @@ public class Main {
 
         JDBCWriter.connectDB();
         PlayerLinkedList list = new PlayerLinkedList();
-
+        list.add(new Player());
         /*
         list.front = new PlayerListNode(new Player());
         list.front.data.age = 20;
