@@ -10,8 +10,6 @@ public class Club {
     //    this.teamList[1] = new Team("team2");
     }
 
-<<<<<<< Updated upstream
-=======
     public void printAllPlayers() {
         teamList[0].getPlayerList().toString();
         teamList[1].getPlayerList().toString();
@@ -20,6 +18,5 @@ public class Club {
     public void printAllByName() {
         
     }
->>>>>>> Stashed changes
 
 }
