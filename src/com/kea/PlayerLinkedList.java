@@ -18,11 +18,11 @@ public class PlayerLinkedList {
         } else {
             int count = 1;
             PlayerListNode current = front;
-            String result = "[\n" + count + ".\n" + current.next.data.toString(); // fence
+            String result = "[\n" + count + ".\n" + current.next.data.age; // fence
             current = current.next;
             count++;
             while(current.next != end) {
-                result += "\n" + count + ".\n" + current.next.data.toString();
+                result += "\n" + count + ".\n" + current.next.data.age; //TODO: change age to toString()
                 current = current.next;
                 count++;
             }
@@ -97,49 +97,40 @@ public class PlayerLinkedList {
     }
 
     public void sortByAge() {
-        //Keep running while next is not null
-        //Run Comparator.compareType for current node to next
-        // int compared = compareType(current, current.next)
-        // switch (compared) case x: move bla bla
         PlayerListNode current = front.next; //TODO: Reminder that current is front.next here unlike other places
-        boolean hasSwapped = true;
-        while(hasSwapped) {
-            hasSwapped = false;
-            while(current.next != end) { // checks if there is anything to swap with
-                int compare = comparator.compareAge(current, current.next); // compares first element to second element
+            while(current != end) { // checks if there is anything to swap with in the previous element, at "end" there is nothing to compare.
+                int compare = 0; // don't swap
+                if(current!= front.next) { // doesn't check for first element
+                    compare = comparator.compareAge(current.prev, current); // compares first element to second element
+                }
 
                 switch (compare) {
                     case 1: // swap
-                        PlayerListNode first = current; // the first element
-                        PlayerListNode second = current.next; // the second element
+                        //next
+                        current.prev.prev.next = current; // 2 positions prior's next is now current
+                        current.prev.next = current.next; //
+                        current.next = current.prev; // current next swap
 
-                        PlayerListNode before = current.prev;
-                        PlayerListNode after = current.next.next;
-                        // Next setup
-                        second.next = first;
-                        current.next = after;
-                        before.next = second;
+                        //prev
+                        current.next.next.prev = current.next;
+                        current.prev = current.prev.prev; //
+                        current.next.prev = current;
 
-                        // Prev setup
-
-                        current = current.next;
-                        hasSwapped = true;
+                        // don't go next because we want to keep checking the same element (the one that was smaller)
                         break;
                     case 0:
-                        System.out.println(compare);
                         current = current.next;
                         break;
                     case -1:
-                        System.out.println(compare);
                         current = current.next;
                         break;
                     default:
                         break;
                 }
+                System.out.println("Compare: " + compare);
             }
-            System.out.println(this.toString());
-        }
 
+            System.out.println(this.toString());
     }
 
     public int size() {

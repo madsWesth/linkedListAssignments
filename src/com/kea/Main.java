@@ -8,23 +8,28 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
         //initialize at start
-        Menu.mainMenu();
+        //Menu.mainMenu();
 
-        /*
-        JDBCWriter.connectDB();
+
+        //JDBCWriter.connectDB();
+
         PlayerLinkedList list = new PlayerLinkedList();
         Player mads = new Player();
         mads.firstName = "mads";
         mads.age = 23;
+        mads.team = Club.teamList[0];
         Player frederik = new Player();
         frederik.firstName = "frederik";
         frederik.age = 22;
+        frederik.team = Club.teamList[0];
         Player jimmy = new Player();
         jimmy.firstName = "jimmy";
         jimmy.age = 29;
+        jimmy.team = Club.teamList[0];
         Player kasper = new Player();
         kasper.firstName = "kasper";
         kasper.age = 25;
+        kasper.team = Club.teamList[0];
 
         list.add(mads);
         list.add(jimmy);
