@@ -15,6 +15,6 @@ public class Comparator {
     }
 
     public int compareName(PlayerListNode node1, PlayerListNode node2) {
-        return node1.data.name.compareToIgnoreCase(node2.data.name);
+        return node1.data.firstName.compareToIgnoreCase(node2.data.firstName);
     }
 }
