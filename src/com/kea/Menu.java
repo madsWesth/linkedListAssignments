@@ -13,7 +13,10 @@ public class Menu {
             startMenu.printMenu();
             switch (startMenu.readChoice()) {
                 case 1:
+                    JDBCReader jdbcReader = new JDBCReader();
+                    jdbcReader.printTableFromDB("members");
                     System.out.println("List all Members");
+                    System.out.println(jdbcReader.toString()); //needs too string to print all members :C
                     break;
                 case 2:
                     System.out.println("Search Menu");
