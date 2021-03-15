@@ -1,26 +1,26 @@
 package com.kea;
 
-import javax.swing.plaf.InsetsUIResource;
-
 public class PlayerLinkedList {
+    //Dummy nodes
     public PlayerListNode front;
-    public PlayerListNode back;
+    public PlayerListNode end;
 
     public PlayerLinkedList() {
-        front = new PlayerListNode(); // initializes the dummy nodes.
-        back = new PlayerListNode();
-        clear(); // sets their pointers correctly.
+        front = new PlayerListNode(new PlayerListNode(null,front),null); // initializes the dummy nodes.
+        end = front.next;
+        //clear();
     }
 
 
     public String toString() {
-        if(front == null) {
+        if(front.next == end) {
             return "[]";
         } else {
-            String result = "[" + front.data.age; // fence TODO: Make a general toString? this one only displays age.
             PlayerListNode current = front;
-            while(current.next != null) {
-                result += ", " + current.data.age;
+            String result = "[" + current.next.data.firstName; // fence TODO: Make a general toString? this one only displays age.
+            current = current.next;
+            while(current.next != end) {
+                result += ", " + current.data.firstName;
                 current = current.next;
             }
             result += "]";
@@ -30,26 +30,27 @@ public class PlayerLinkedList {
 
     // Append
     public void add(Player nodeValue) {
-        if(front.next == back) {
+
+        if(front.next == end) {
             PlayerListNode newNode = new PlayerListNode(nodeValue);
             //next
-            newNode.next = back;
+            newNode.next = end;
             front.next = newNode;
             //prev
             newNode.prev = front;
-            back.prev = newNode;
+            end.prev = newNode;
         } else {
             PlayerListNode current = front;
-            while(current.next != back) {
+            while(current.next != end) {
                 current = current.next;
             }
             PlayerListNode newNode = new PlayerListNode(nodeValue);
             //next
             current.next = newNode;
-            newNode.next = back;
+            newNode.next = end;
             //prev
             newNode.prev = current;
-            back.prev = newNode;
+            end.prev = newNode;
         }
     }
 
@@ -59,7 +60,38 @@ public class PlayerLinkedList {
     }
 
     public PlayerListNode get(int index) {
-return null;
+        PlayerListNode current = front;
+        for(int i = 0; i <= index; i++) {
+            current = current.next;
+        }
+        return current;
+
+    }
+
+    public int indexOf(Player data) {
+        int index = 0;
+        PlayerListNode current = front;
+        while(current.next != end) {
+            if(current.next.data == data) {
+                return index;
+            }
+            current = current.next;
+            index++;
+        }
+        return -1;
+    }
+
+    //print list with index numbers, and remove afterwards
+    public void remove(int index) {
+        PlayerListNode current = front;
+        if(index == 0) {
+            current.next = current.next.next;
+            current.next.prev = current;
+        } else {
+            current = get(index-1);
+            current.next = current.next.next;
+            current.next.prev = current;
+        }
     }
 
     public void sortByAge(Comparator comparator) {
@@ -96,8 +128,18 @@ return null;
         }
     }
 
+    public int size() {
+        int count = 0;
+        PlayerListNode current = front;
+        while(current.next != end) {
+            count++;
+            current = current.next;
+        }
+        return count;
+    }
+
     public void clear() {
-        front.next = back;
-        back.prev = front;
+        front.next = end;
+        end.prev = front;
     }
 }

@@ -6,9 +6,25 @@ public class Main {
 	// write your code here
         //mainMenu();
 
-        JDBCWriter.connectDB();
+        //JDBCWriter.connectDB();
         PlayerLinkedList list = new PlayerLinkedList();
-        list.add(new Player());
+        Player mads = new Player();
+        mads.firstName = "mads";
+        Player frederik = new Player();
+        frederik.firstName = "frederik";
+        Player jimmy = new Player();
+        jimmy.firstName = "jimmy";
+        Player kasper = new Player();
+        kasper.firstName = "kasper";
+        list.add(mads);
+        list.add(frederik);
+        list.add(jimmy);
+        list.add(kasper);
+        System.out.println(list.get(3).data.firstName);
+        //list.remove(3);
+        System.out.println(list.toString());
+        System.out.println(list.size());
+
         /*
         list.front = new PlayerListNode(new Player());
         list.front.data.age = 20;
