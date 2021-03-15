@@ -5,7 +5,7 @@ import java.util.Collections;
 
 public class Club {
     String clubName;
-    static Team[] teamList;
+    static Team[] teamList = new Team[2];
     JDBCReader reader = new JDBCReader();
 
     public Club(String clubName) {
