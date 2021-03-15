@@ -2,6 +2,7 @@ package com.kea;
 
 import java.util.Collections;
 
+
 public class Main {
 
     public static void main(String[] args) {
@@ -34,6 +35,9 @@ public class Main {
         //list.remove(3);
         System.out.println(list.toString());
         System.out.println(list.size());
+        JDBCReader jdbcReader = new JDBCReader();
+        jdbcReader.printTableFromDB("members");
+
 
         /*
         list.front = new PlayerListNode(new Player());

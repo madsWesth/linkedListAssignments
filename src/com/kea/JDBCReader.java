@@ -5,8 +5,8 @@ import java.util.HashMap;
 
 public class JDBCReader {
 
-
     public void printTableFromDB(String table) {
+        PlayerLinkedList list = new PlayerLinkedList();
 
         try {
             Connection cn = DriverManager.getConnection
@@ -20,8 +20,15 @@ public class JDBCReader {
             //print resultset
             if (rs.next()) {
                 do {
-                    System.out.println(rs.getString(1) + "," + rs.getString(2) + ","
-                            + rs.getString(3) + "," + rs.getString(4) + "," + rs.getString(5));
+                    int key = rs.getInt(1);
+                    String firstName = rs.getString(2);
+                    String lastName = rs.getString(3);
+                    int age = rs.getInt(4);
+                    String team = rs.getString(5);
+                    Player player = new Player(key,firstName,lastName,age,team);
+                    list.add(player);
+                    //System.out.println(rs.getString(1) + "," + rs.getString(2) + ","
+                      //      + rs.getString(3) + "," + rs.getString(4) + "," + rs.getString(5));
                 } while (rs.next());
             } else {
                 System.out.println("Record Not Found...");
@@ -30,5 +37,7 @@ public class JDBCReader {
         } catch (Exception e) {
             System.out.println(e);
         }
+        //toString that prints out the tables in a formatted fasion
+        System.out.println(list.toString());
     }
 }
