@@ -10,7 +10,7 @@ public class PlayerLinkedList {
         end = front.next;
         //clear();
     }
-    
+
     public String toString() {
         if(front.next == end) {
             return "[]";
@@ -99,11 +99,9 @@ public class PlayerLinkedList {
         // switch (compared) case x: move bla bla
         PlayerListNode current = front;
         //TODO: need to check for list size 2, in which case current.next.next will always be null
-        while(current.next != null) { // checks if there is anything to swap with
-            int compare = comparator.compareAge(current, current.next);
-            if(current.next.next != null) { // checks if there is a third link
+        while(current.next != end) { // checks if there is anything to swap with
+            int compare = comparator.compareAge(current.next, current.next.next);
 
-            }
 
             switch (compare) {
                 case 1: // swap
