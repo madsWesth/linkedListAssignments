@@ -6,12 +6,16 @@ public class PlayerListNode {
     public PlayerListNode prev; //TODO: Add functionality in LinkedList
 
     public PlayerListNode(Player data) {
-        this.data = data;
+        this(data, null, null);
     }
     public PlayerListNode(PlayerListNode next) {
-
+        this(null, next ,null);
     }
-    public PlayerListNode() {
 
+    public PlayerListNode(Player data, PlayerListNode next, PlayerListNode prev) {
+        this.data = data;
+        this.next = next;
+        this.prev = prev;
     }
+
 }
