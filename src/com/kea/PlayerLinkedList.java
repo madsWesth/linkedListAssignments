@@ -156,7 +156,4 @@ public class PlayerLinkedList {
         front.next = end;
         end.prev = front;
     }
-
-    public void add(String nextLine) {
-    }
 }

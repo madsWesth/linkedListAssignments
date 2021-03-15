@@ -41,18 +41,4 @@ public class JDBCReader {
         //toString that prints out the tables in a formatted fasion
         System.out.println(list.toString());
     }
-
-    public static void makeNewListWithInput() {
-        PlayerLinkedList playerLinkedList = new PlayerLinkedList();
-        Scanner scan = new Scanner(System.in);
-        int string = scan.nextInt();
-        scan.nextLine();
-        do {
-            playerLinkedList.add(scan.nextLine());
-            string--;
-        } while (string > 0);
-
-        scan.close();
-        System.out.println(playerLinkedList);
-    }
 }
