@@ -10,6 +10,8 @@ public class Main {
         PlayerLinkedList list = new PlayerLinkedList();
         Player mads = new Player();
         mads.firstName = "mads";
+        mads.lastName = "dsjklfaasldfjk";
+        mads.age = 54;
         Player frederik = new Player();
         frederik.firstName = "frederik";
         Player jimmy = new Player();

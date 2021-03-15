@@ -15,14 +15,17 @@ public class PlayerLinkedList {
         if(front.next == end) {
             return "[]";
         } else {
+            int count = 1;
             PlayerListNode current = front;
-            String result = "[" + current.next.data.firstName; // fence TODO: Make a general toString? this one only displays age.
+            String result = "[\n" + count + ".\n" + current.next.data.toString(); // fence TODO: Make a general toString? this one only displays age.
             current = current.next;
+            count++;
             while(current.next != end) {
-                result += ", " + current.data.firstName;
+                result += "\n" + count + ".\n" + current.data.toString();
                 current = current.next;
+                count++;
             }
-            result += "]";
+            result += "\n]";
             return  result;
         }
     }
