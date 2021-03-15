@@ -17,23 +17,30 @@ public class Main {
         PlayerLinkedList list = new PlayerLinkedList();
         Player mads = new Player();
         mads.firstName = "mads";
+        mads.age = 23;
         Player frederik = new Player();
         frederik.firstName = "frederik";
+        frederik.age = 22;
         Player jimmy = new Player();
         jimmy.firstName = "jimmy";
+        jimmy.age = 29;
         Player kasper = new Player();
         kasper.firstName = "kasper";
+        kasper.age = 25;
+
         list.add(mads);
-        list.add(frederik);
         list.add(jimmy);
+        list.add(frederik);
         list.add(kasper);
-        System.out.println(list.get(3).data.firstName);
+
+        //System.out.println(list.get(3).data.firstName);
         //list.remove(3);
         System.out.println(list.toString());
-        System.out.println(list.size());
-        JDBCReader jdbcReader = new JDBCReader();
-        jdbcReader.printTableFromDB("members");
-
+        //System.out.println(list.size());
+        //JDBCReader jdbcReader = new JDBCReader();
+        //jdbcReader.printTableFromDB("members");
+        list.sortByAge();
+        System.out.println(list.toString());
 
         /*
         list.front = new PlayerListNode(new Player());
