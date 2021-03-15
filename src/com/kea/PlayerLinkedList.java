@@ -4,7 +4,7 @@ public class PlayerLinkedList {
     //Dummy nodes
     public PlayerListNode front;
     public PlayerListNode end;
-    private Comparator comparator = new Comparator();
+    private NameComparator comparator = new NameComparator();
 
     public PlayerLinkedList() {
         front = new PlayerListNode(new PlayerListNode(null,front),null); // initializes the dummy nodes.

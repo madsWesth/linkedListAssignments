@@ -9,7 +9,8 @@ public class Main {
 	// write your code here
         //initialize at start
         Club club = new Club("Boldklubben");
-
+        club.reader.printTableFromDB("members");
+        club.printAllByName("Lars");
         Menu.mainMenu();
 
         /*
@@ -59,5 +60,6 @@ public class Main {
         int d = name.compareToIgnoreCase(name2);
         System.out.println(d);
          */
+
     }
 }
