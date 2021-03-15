@@ -20,7 +20,7 @@ public class JDBCWriter {
 
     //Har jeg fat i det rigtige?
     public static void updatePlayer(int id, String firstname, String lastname, int age, int team){
-        String updateStr = String.format("UPDATE WHERE %s values (DEFAULT, %d, '%s', '%s', %d, %s)", id, firstname, lastname, age, team);
+        String updateStr = String.format("UPDATE member (%d, '%s', '%s', %d, %d)", id, firstname, lastname, age, team);
         PreparedStatement preparedStatement;
 
         try {
@@ -30,4 +30,6 @@ public class JDBCWriter {
             System.out.println("Update Error: " + err.getMessage());
         }
     }
+
+
 }
