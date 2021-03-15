@@ -7,8 +7,8 @@ public class PlayerLinkedList {
     public PlayerListNode back;
 
     public PlayerLinkedList() {
-        front.next = new PlayerListNode(); // initializes the dummy nodes.
-        back.next = new PlayerListNode();
+        front = new PlayerListNode(); // initializes the dummy nodes.
+        back = new PlayerListNode();
         clear(); // sets their pointers correctly.
     }
 
