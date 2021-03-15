@@ -2,7 +2,7 @@ package com.kea;
 
 public class Club {
     String clubName;
-    Team[] teamList;
+    static Team[] teamList;
 
     public Club(String clubName) {
         this.clubName = clubName;

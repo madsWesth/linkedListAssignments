@@ -9,6 +9,22 @@ public class Team {
         this.playerList = new PlayerLinkedList();
     }
 
+    public void addPlayer(int key, String firstName, String lastName, int age, String team) {
+        Player player = new Player(key, firstName, lastName, age, team);
+        playerList.add(player);
+    }
+
+    public void addPlayer(Player player) {
+        playerList.add(player);
+    }
+
+    public void removePlayer(int index) {
+        //print list of players so user can choose?
+        playerList.toString();
+        playerList.remove(index);
+
+    }
+
     public String getTeamName() {
         return teamName;
     }

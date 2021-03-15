@@ -27,7 +27,7 @@ public class JDBCReader {
                     int age = rs.getInt(4);
                     String team = rs.getString(5);
                     Player player = new Player(key,firstName,lastName,age,team);
-                    list.add(player);
+                    //player.team.addPlayer(player);
                     //System.out.println(rs.getString(1) + "," + rs.getString(2) + ","
                       //      + rs.getString(3) + "," + rs.getString(4) + "," + rs.getString(5));
                 } while (rs.next());
