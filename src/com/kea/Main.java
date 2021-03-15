@@ -6,7 +6,7 @@ public class Main {
 	// write your code here
         //mainMenu();
 
-
+        JDBCWriter.connectDB();
         PlayerLinkedList list = new PlayerLinkedList();
 
         /*
