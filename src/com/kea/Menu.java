@@ -3,6 +3,7 @@ package com.kea;
 import java.util.Scanner;
 
 public class Menu {
+    Club club = new Club("klubben");
 
     public static void mainMenu(){
         String[] listMenu = new String[]{"List all Members", "Search Menu", "Manage Team Menu", "Exit"};
@@ -44,7 +45,7 @@ public class Menu {
         }
     }
 
-    public static void manageTeamMenu(int team){
+    public void manageTeamMenu(int team){
         String[] listMenu = new String[]{"Add a Member to team nr. " + team, "Delete a Member from team nr. " + team, "Main Menu"};
         GenericMenu startMenu = new GenericMenu("- Football Club -\n- Manage Team nr. " + team + " -", "Choose an option: ", listMenu);
 
@@ -54,10 +55,35 @@ public class Menu {
             switch (startMenu.readChoice()) {
                 case 1:
                     System.out.println("Add a Member to team nr. " + team);
+                    switch (team) {
+                        case 1:
+
+                            break;
+                        case 2:
+
+                            break;
+                    }
                     break;
                 case 2:
                     System.out.println("Delete a Member from team nr. " + team);
-                    break;
+                    Player tmpPlayer;
+                    int choice;
+                    switch (team) {
+                        case 1:
+                            System.out.println(Club.teamList[0].getPlayerList().toString());
+                            choice = startMenu.readChoice();
+                            tmpPlayer = Club.teamList[0].getPlayerList().get(choice).data;
+                            Club.teamList[0].removePlayer(choice);
+                            club.writer.removePlayer(tmpPlayer.firstName, tmpPlayer.lastName);
+                            break;
+                        case 2:
+                            Club.teamList[1].getPlayerList().toString();
+                            tmpPlayer = Club.teamList[1].getPlayerList().get(choice).data;
+                            Club.teamList[1].removePlayer(choice);
+                            club.writer.removePlayer(tmpPlayer.firstName, tmpPlayer.lastName);
+                            break;
+
+                        break;
                 case 3:
                     System.out.println("Returning to Main Menu...");
                     mainMenu();
