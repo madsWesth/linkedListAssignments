@@ -58,11 +58,14 @@ public class Menu {
                     switch (team) {
                         case 1:
 
+                            Club.teamList[0].addPlayer();
                             break;
                         case 2:
 
+                            Club.teamList[0].addPlayer();
                             break;
                     }
+
                     break;
                 case 2:
                     System.out.println("Delete a Member from team nr. " + team);
@@ -78,6 +81,7 @@ public class Menu {
                             break;
                         case 2:
                             Club.teamList[1].getPlayerList().toString();
+                            choice = startMenu.readChoice();
                             tmpPlayer = Club.teamList[1].getPlayerList().get(choice).data;
                             Club.teamList[1].removePlayer(choice);
                             club.writer.removePlayer(tmpPlayer.firstName, tmpPlayer.lastName);
