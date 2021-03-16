@@ -13,10 +13,7 @@ public class Menu {
             startMenu.printMenu();
             switch (startMenu.readChoice()) {
                 case 1:
-                    JDBCReader jdbcReader = new JDBCReader();
-                    jdbcReader.printTableFromDB("members");
-                    System.out.println("List all Members");
-                    System.out.println(jdbcReader.toString()); //needs too string to print all members :C
+
                     break;
                 case 2:
                     System.out.println("Search Menu");
@@ -53,6 +50,12 @@ public class Menu {
             startMenu.printMenu();
             switch (startMenu.readChoice()) {
                 case 1:
+                    Scanner sc = new Scanner(System.in);
+                    int id = sc.nextInt();
+                    String firstname = sc.nextLine();
+                    String lastname = sc.nextLine();
+                    int age = sc.nextInt();
+                    JDBCWriter.insert(id, firstname, lastname, age, team);
                     System.out.println("Add a Member to team nr. " + team);
                     break;
                 case 2:
@@ -87,7 +90,7 @@ public class Menu {
                     club.printAllByName(name);
                     break;
                 case 2:
-                    System.out.println("Delete a Member from team nr. ");
+                    System.out.println("Search for all members on a team");
                     break;
                 case 3:
                     System.out.println("Search for players between an age");

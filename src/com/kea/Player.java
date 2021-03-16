@@ -6,7 +6,6 @@ public class Player {
     String lastName = "";
     int age = -1;
     Team team;
-    //Team team; todo uwu
 
     public Player(int key, String firstName, String lastName, int age, String team) {
         this.id = key;
@@ -21,7 +20,7 @@ public class Player {
                 this.team = Club.teamList[1];
                 break;
         }
-        this.team.addPlayer(this);  //hmmmm
+        this.team.addPlayer(this);
     }
 
     public Player() {       //todo remove?
