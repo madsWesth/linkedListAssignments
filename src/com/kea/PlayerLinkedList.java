@@ -18,11 +18,11 @@ public class PlayerLinkedList {
         } else {
             int count = 1;
             PlayerListNode current = front;
-            String result = "[\n" + count + ".\n" + current.next.data.age; // fence
+            String result = "[\n" + count + ".\n" + current.next.data.toString(); // fence
             current = current.next;
             count++;
             while(current.next != end) {
-                result += "\n" + count + ".\n" + current.next.data.age; //TODO: change age to toString()
+                result += "\n" + count + ".\n" + current.next.data.toString();
                 current = current.next;
                 count++;
             }
