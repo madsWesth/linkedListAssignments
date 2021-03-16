@@ -42,7 +42,7 @@ public class Menu {
         }
     }
 
-    public void manageTeamMenu(int team){
+    public void manageTeamMenu(int team) {
         String[] listMenu = new String[]{"Add a Member to team nr. " + team, "Delete a Member from team nr. " + team, "Main Menu"};
         GenericMenu startMenu = new GenericMenu("- Football Club -\n- Manage Team nr. " + team + " -", "Choose an option: ", listMenu);
 
@@ -62,27 +62,27 @@ public class Menu {
                 scn = new Scanner(System.in);
 
                 switch (team) {
-                        case 1:
-                            firstName = scn.next();
-                            lastName = scn.next();
-                            age = scn.nextInt();
-                            teamName = scn.next();
+                    case 1:
+                        firstName = scn.next();
+                        lastName = scn.next();
+                        age = scn.nextInt();
+                        teamName = scn.next();
 
-                            Club.teamList[0].addPlayer(firstName,lastName,age,teamName);
-                            club.writer.insert(firstName,lastName,age,teamName);
-                            break;
-                        case 2:
-                            firstName = scn.next();
-                            lastName = scn.next();
-                            age = scn.nextInt();
-                            teamName = scn.next();
+                        Club.teamList[0].addPlayer(firstName, lastName, age, teamName);
+                        club.writer.insert(firstName, lastName, age, teamName);
+                        break;
+                    case 2:
+                        firstName = scn.next();
+                        lastName = scn.next();
+                        age = scn.nextInt();
+                        teamName = scn.next();
 
-                            Club.teamList[1].addPlayer(firstName,lastName,age,teamName);
-                            club.writer.insert(firstName,lastName,age,teamName);
-                            break;
-                    }
+                        Club.teamList[1].addPlayer(firstName, lastName, age, teamName);
+                        club.writer.insert(firstName, lastName, age, teamName);
+                        break;
+                }
 
-                    break;
+                break;
                 case 2:
                     System.out.println("Delete a Member from team nr. " + team);
                     Player tmpPlayer;
@@ -104,13 +104,14 @@ public class Menu {
                             break;
 
                         break;
-                case 3:
-                    System.out.println("Returning to Main Menu...");
-                    mainMenu();
-                    break;
-                default:
-                    System.out.println("Invalid input please try again...");
-                    break;
+                        case 3:
+                            System.out.println("Returning to Main Menu...");
+                            mainMenu();
+                            break;
+                        default:
+                            System.out.println("Invalid input please try again...");
+                            break;
+                    }
             }
         }
     }
