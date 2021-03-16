@@ -51,21 +51,34 @@ public class Menu {
             startMenu.printMenu();
             switch (startMenu.readChoice()) {
                 case 1:
-                    Scanner sc = new Scanner(System.in);
-                    int id = sc.nextInt();
-                    String firstname = sc.nextLine();
-                    String lastname = sc.nextLine();
-                    int age = sc.nextInt();
-                    JDBCWriter.insert(id, firstname, lastname, age, team);
                     System.out.println("Add a Member to team nr. " + team);
-                    switch (team) {
-                        case 1:
+                    break;
 
-                            Club.teamList[0].addPlayer();
+                Scanner scn;
+                String firstName;
+                String lastName;
+                int age;
+                String teamName;
+                scn = new Scanner(System.in);
+
+                switch (team) {
+                        case 1:
+                            firstName = scn.next();
+                            lastName = scn.next();
+                            age = scn.nextInt();
+                            teamName = scn.next();
+
+                            Club.teamList[0].addPlayer(firstName,lastName,age,teamName);
+                            club.writer.insert(firstName,lastName,age,teamName);
                             break;
                         case 2:
+                            firstName = scn.next();
+                            lastName = scn.next();
+                            age = scn.nextInt();
+                            teamName = scn.next();
 
-                            Club.teamList[0].addPlayer();
+                            Club.teamList[1].addPlayer(firstName,lastName,age,teamName);
+                            club.writer.insert(firstName,lastName,age,teamName);
                             break;
                     }
 

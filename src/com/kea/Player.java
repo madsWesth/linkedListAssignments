@@ -1,14 +1,12 @@
 package com.kea;
 
 public class Player {
-    int id = -1;
     String firstName = "";
     String lastName = "";
     int age = -1;
     Team team;
 
-    public Player(int key, String firstName, String lastName, int age, String team) {
-        this.id = key;
+    public Player(String firstName, String lastName, int age, String team) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;

@@ -21,12 +21,11 @@ public class JDBCReader {
             //print resultset
             if (rs.next()) {
                 do {
-                    int key = rs.getInt(1);
                     String firstName = rs.getString(2);
                     String lastName = rs.getString(3);
                     int age = rs.getInt(4);
                     String team = rs.getString(5);
-                    Player player = new Player(key,firstName,lastName,age,team);
+                    Player player = new Player(firstName,lastName,age,team);
                     //player.team.addPlayer(player);
                     //System.out.println(rs.getString(1) + "," + rs.getString(2) + ","
                       //      + rs.getString(3) + "," + rs.getString(4) + "," + rs.getString(5));

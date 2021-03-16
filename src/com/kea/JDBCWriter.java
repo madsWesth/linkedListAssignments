@@ -44,9 +44,8 @@ public class JDBCWriter {
     }
 
     // Insert insert
-    public static void insert(int id, String firstname, String lastname, int age, Team team){
-        String teamName = team.getTeamName();
-        String insstr = String.format("insert into %s member(%d, '%s', '%s', %d, %d)", id, firstname, lastname, age, teamName);
+    public static void insert(String firstname, String lastname, int age, String team){
+        String insstr = String.format("insert into member('%s' '%s', '%s', %d, %s)", "default", firstname, lastname, age, team);
         PreparedStatement preparedStatement;
         try {
             preparedStatement = cn.prepareStatement(insstr);

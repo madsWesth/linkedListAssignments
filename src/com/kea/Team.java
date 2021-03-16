@@ -9,8 +9,8 @@ public class Team {
         this.playerList = new PlayerLinkedList();
     }
 
-    public void addPlayer(int key, String firstName, String lastName, int age, String team) {
-        Player player = new Player(key, firstName, lastName, age, team);
+    public void addPlayer(String firstName, String lastName, int age, String team) {
+        Player player = new Player(firstName, lastName, age, team);
         playerList.add(player);
     }
 
