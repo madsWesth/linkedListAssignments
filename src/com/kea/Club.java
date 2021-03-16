@@ -33,7 +33,7 @@ public class Club {
                 list.add(playerList2.get(i).data);
             }
         }
-        NameComparator nameComparator = new NameComparator();
+        NodeComparator nameComparator = new NodeComparator();
         Collections.sort(list, nameComparator);
         System.out.println(list.toString());
     }

@@ -2,7 +2,7 @@ package com.kea;
 
 import java.util.Comparator;
 
-public class NameComparator implements Comparator<Player> {
+public class NodeComparator implements Comparator<Player> {
 
     public int compareAge(PlayerListNode node1, PlayerListNode node2) {
         int compare = 0;
