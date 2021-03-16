@@ -133,6 +133,45 @@ public class PlayerLinkedList {
             System.out.println(this.toString());
     }
 
+    public void sortByName() {
+        PlayerListNode current = front.next; //TODO: Reminder that current is front.next here unlike other places
+        while(current != end) { // checks if there is anything to swap with in the previous element, at "end" there is nothing to compare.
+            int compare = 0; // don't swap, ignore first element
+            if(current!= front.next) { // doesn't check for first element
+                compare = comparator.compareName(current.prev, current); // compares first element to second element
+            }
+
+            switch (compare) {
+                case 1: // swap
+                    //next
+                    current.prev.prev.next = current; // 2 positions prior's next is now current
+                    current.prev.next = current.next; //
+                    current.next = current.prev; // current next swap
+
+                    //prev
+                    current.next.next.prev = current.next;
+                    current.prev = current.prev.prev; //
+                    current.next.prev = current;
+
+                    // don't go next because we want to keep checking the same element (the one that was smaller)
+                    break;
+                case 0:
+                    current = current.next;
+                    break;
+                case -1:
+                    current = current.next;
+                    break;
+                default:
+                    break;
+            }
+            System.out.println("Compare: " + compare);
+        }
+
+        System.out.println(this.toString());
+    }
+
+
+
     public int size() {
         int count = 0;
         PlayerListNode current = front;
