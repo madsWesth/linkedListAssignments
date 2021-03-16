@@ -21,7 +21,7 @@ public class Club {
     }
 
     public void printAllByName(String name) {
-        ArrayList<Player> list = new ArrayList<>();
+        PlayerLinkedList list = new PlayerLinkedList();
         PlayerLinkedList playerList1 = teamList[0].getPlayerList();
         PlayerLinkedList playerList2 = teamList[1].getPlayerList();
         for(int i = 0; i < playerList1.size(); i++) {
@@ -34,8 +34,7 @@ public class Club {
                 list.add(playerList2.get(i).data);
             }
         }
-        NodeComparator nameComparator = new NodeComparator();
-        Collections.sort(list, nameComparator);
+        list.sortByName();
         System.out.println(list.toString());
     }
 }
