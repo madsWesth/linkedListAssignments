@@ -20,7 +20,6 @@ public class Team {
 
     public void removePlayer(int index) {
         //print list of players so user can choose?
-        playerList.toString();
         playerList.remove(index);
 
     }
